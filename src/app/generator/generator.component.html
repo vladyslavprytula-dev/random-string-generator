@@ -1,0 +1,13 @@
+<div class="container">
+  <button class="btn" [disabled]="!activ" (click)="getEvery3000ms()">Random string</button>
+
+  <p
+    *ngIf="!string.includes('0')"
+    [ngClass]="{
+      numbers: string.match('^[1-9]+$'),
+      palindrome: string === string.split('').reverse().join('')
+    }"
+  >
+    {{ string }}
+  </p>
+</div>
